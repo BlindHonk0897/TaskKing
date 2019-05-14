@@ -2,23 +2,22 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app); 
 
+const bodyParser = require('body-parser');
+
+
 const mysql = require('./public/scripts/mysql');
-const routes = require('./router/routes.js');
+const getRoutes = require('./router/getRoutes.js');
+const postRoutes = require('./router/postRoutes.js');
 
 const port = process.env.PORT||3000;
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 //app.use('/public', routes);
 //app.set('view',__dirname+'/pulic/views');
 app.set("view engine", "ejs");
-routes(app);
-
-// app.get('/', function(req, res){
-//     res.sendFile(__dirname +"/public/views/login.html");
-// });
-// app.get('/dashboard', function(req, res){
-//     res.sendFile(__dirname +"/public/views/dashboard.html");
-// });
+getRoutes(app);
+postRoutes(app);
 
 //Connecting to database before running the server
 mysql.connect(function(err){
