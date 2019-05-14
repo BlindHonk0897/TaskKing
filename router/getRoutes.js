@@ -1,5 +1,7 @@
 module.exports = function(app){
     
+    const mysql = require('../public/scripts/mysql');
+
     app.get('/',function(req,res){
         res.render('../views/login.ejs');
     })
@@ -33,7 +35,13 @@ module.exports = function(app){
     })
 
     app.get('/currentTasking',function(req,res){
-        res.render('../views/currentTasking.ejs');
+        mysql.connect(function(err){
+            mysql.query(`SELECT * FROM tblCurrentTasking`, function (err, result) {
+                if (err) throw err;
+                res.render('../views/currentTasking.ejs',{data:result});
+            });
+        })
+       
     })
 }
 

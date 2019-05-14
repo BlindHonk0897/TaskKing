@@ -21,8 +21,9 @@ postRoutes(app);
 
 //Connecting to database before running the server
 mysql.connect(function(err){
-    if(err){console.log('error')}
-    console.log('connected to Datadase')
+    if(err){console.log('ERROR CONNECTING TO DATABASE! CANNO RUN SERVER!')}else{
+    console.log('connected to Database')
     app.listen(port,()=>{console.log(`SERVER RUNNING AT PORT ${port}........`)});
+    }
 })
 

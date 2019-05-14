@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/BlindHonk0897/TaskKing/issues"
   },
-  "homepage": "https://github.com/BlindHonk0897/TaskKing#readme"
+  "homepage": "https://github.com/BlindHonk0897/TaskKing#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.0"
+  }
 }
