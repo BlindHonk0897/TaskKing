@@ -14,9 +14,9 @@ module.exports = function(app){
         })
     })
     app.post('/shuffle',function(req,res){
-      var dtaGetter =  require('../public/scripts/dataGetter');
-      dtaGetter(mysql);
-        res.send('success');
+     require('../public/scripts/shuffler');
+    
+       res.send('success');
     })
 }
 

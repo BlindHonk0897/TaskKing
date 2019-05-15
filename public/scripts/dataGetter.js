@@ -6,7 +6,6 @@ module.exports = function(mysql){
         if (err) {
             console.log("Error neh")
         }
-        console.log(result);
         var data = JSON.stringify(result);
         fs.writeFile('./public/scripts/records/Kitchen.json',data,finished);
       });
@@ -97,6 +96,23 @@ module.exports = function(mysql){
         }
         var data = JSON.stringify(result);
         fs.writeFile('./public/scripts/records/Comlab.json',data,finished);
+      });
+      
+      // Student A
+      mysql.query(`SELECT StudentLastname FROM tblStudents where GroupName = 'A'`, function (err, result) {
+        if (err) {
+            console.log("Error neh")
+        }
+        var data = JSON.stringify(result);
+        fs.writeFile('./public/scripts/records/Student A.json',data,finished);
+      });
+      // Student B
+      mysql.query(`SELECT StudentLastname FROM tblStudents where GroupName = 'B'`, function (err, result) {
+        if (err) {
+            console.log("Error neh")
+        }
+        var data = JSON.stringify(result);
+        fs.writeFile('./public/scripts/records/Student B.json',data,finished);
       });
   })
   function finished(){

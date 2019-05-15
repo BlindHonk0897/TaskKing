@@ -15,6 +15,8 @@ module.exports = function(app){
     })
 
     app.get('/normalShuffling',function(req,res){
+        var dtaGetter =  require('../public/scripts/dataGetter');
+        dtaGetter(mysql);
         res.render('../views/normalShuffling.ejs');
     })
 
