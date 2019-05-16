@@ -24,5 +24,11 @@ module.exports = function(app){
     app.post('/cancel',function(req,res){
         res.send('Cancel Transaction');
     })
+    app.post('/shuffleWithConsequence',function(req,res){
+    console.log(req.body);
+      var shuffle =  require('../public/scripts/shufflerWithConsequence');
+      shuffle(req.body.Kitchen,req.body.Dishwasher,req.body.Dining);
+        res.send('Success');
+    })
 }
 

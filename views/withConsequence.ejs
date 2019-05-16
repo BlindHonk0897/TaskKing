@@ -7,7 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="/assets/styles/withConsequence.css">
-      <script src="/controller/shufflerWithConsequence.js"></script>
+      <script src="/controller/shuffleWithConsequence.js"></script>
    </head>
    <body>
       <div class="menu"> <span></span> </div>
@@ -84,7 +84,7 @@
                   <!-- <td><input type="text" class="form-control form-control-sm" placeholder="Enter coordinator..."></td> -->
                   <td>
                      <select name="studentsKitch" id="studentsKitch" class="form-control form-control-sm">
-                        <option>( Choose Coordinator Here )</option>
+                        <option value="EX">( Choose Coordinator Here )</option>
                         <% students = data %>
                         <% students.forEach(function(stud){%>
                            <option value="<%= stud.StudentLastname %>"><%= stud.StudentLastname %></option>
@@ -94,7 +94,7 @@
                   <!-- <td><input type="text" class="form-control form-control-sm" placeholder="Enter coordinator..."></td> -->
                   <td>
                         <select name="studentsDish" id="studentsDish" class="form-control form-control-sm">
-                           <option>( Choose Coordinator Here )</option>
+                           <option value="EX">( Choose Coordinator Here )</option>
                            <% students = data %>
                            <% students.forEach(function(stud){%>
                               <option value="<%= stud.StudentLastname %>"><%= stud.StudentLastname %></option>
@@ -192,7 +192,7 @@
                   <!-- <td><input type="text" class="form-control form-control-sm" placeholder="Enter coordinator..."></td> -->
                   <td>
                         <select name="studentsDin" id="studentsDin" class="form-control form-control-sm">
-                           <option>( Choose Coordinator Here )</option>
+                           <option value="EX">( Choose Coordinator Here )</option>
                            <% students = data %>
                            <% students.forEach(function(stud){%>
                               <option value="<%= stud.StudentLastname %>"><%= stud.StudentLastname %></option>

@@ -25,6 +25,8 @@ module.exports = function(app){
     })
 
     app.get('/withConsequence',function(req,res){
+        var dtaGetter =  require('../public/scripts/dataGetter');
+        dtaGetter(mysql);
         mysql.connect(function(err){
             mysql.query(`SELECT * FROM tblStudents`, function (err, result) {
                 if (err) throw err;

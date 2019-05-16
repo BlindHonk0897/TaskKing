@@ -1,5 +1,6 @@
 const mysql = require('./mysql');
 mysql.connect(function(err){
+    // dapat sa tblCurrent Tasking ang pag delete anih
     mysql.query("DELETE FROM `tblSample`",function(err,result){
         if(err)throw err;
      });
