@@ -21,5 +21,8 @@ module.exports = function(app){
         require('../public/scripts/saverAndDownloader');
         res.send('success');
     })
+    app.post('/cancel',function(req,res){
+        res.send('Cancel Transaction');
+    })
 }
 

@@ -25,7 +25,12 @@ module.exports = function(app){
     })
 
     app.get('/withConsequence',function(req,res){
-        res.render('../views/withConsequence.ejs');
+        mysql.connect(function(err){
+            mysql.query(`SELECT * FROM tblStudents`, function (err, result) {
+                if (err) throw err;
+                res.render('../views/withConsequence.ejs',{data:result});
+            });
+        })
     })
 
     app.get('/coordinator',function(req,res){
