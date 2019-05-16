@@ -14,7 +14,7 @@ $(document).ready(function(){
           success:function(dat){
              console.log(dat);
              top.location.href = "/shuffledTask";
-          }
+           }
          })
       }
     });
