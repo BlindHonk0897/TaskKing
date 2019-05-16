@@ -17,12 +17,7 @@ var off = JSON.parse(fs.readFileSync('./public/scripts/records/Office.json'));
 var win1 = JSON.parse(fs.readFileSync('./public/scripts/records/Window 1.json'));
 var win2 = JSON.parse(fs.readFileSync('./public/scripts/records/Window 2.json'));
 
-
 // Big task kitch,dinn,dish
-
-// var filtered = items.filter(function(item) {
-//     return item.id !== 123; 
-//  });
 
 var newKitch = [] , newdin = [] ,newdish = [], newBG = [] , newcomp =[] , newCourt = [];
 var newOff = [] , newLaun = [] ,newHall = [], newFG= [] , newWin1 =[] , newWin2 = [];
@@ -363,17 +358,242 @@ newcomp.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 
 console.log("newComp with Coordinator")
 console.log(newcomp);
 
-// mysql.connect(function(err){
-  
-//    // mysql.query(`SELECT * FROM tblEducator where Username = '${req.body.username}' and Password = '${req.body.password}'`, function (err, result) {
-//    //     if (err) throw err;
-//    //     if(result.length > 0){
-//    //         res.send("Success")
-//    //     }else{
-//    //         res.send("Failed")
-//    //     }
-//    // });
-// })
+mysql.connect(function(err){
+   // Delete first data to database
+   mysql.query("DELETE FROM tblShuffledTask",function(err,result){
+      if(err)throw err;
+   });
+   // insert kitchen
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newKitch[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Kitchen","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newKitch.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newKitch[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Kitchen",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+   
+   // insert Dining
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newdin[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Dining","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newdin.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newdin[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Dining",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Dishwasher
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newdish[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Dishwashing","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newdish.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newdish[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Dishwashing",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Back Garden
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newBG[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Back Garden","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newBG.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newBG[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Back Garden",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Comlab
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newcomp[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Comlab","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newcomp.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newcomp[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Comlab",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+    // insert Courtyard
+    mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newCourt[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Courtyard & Stage","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newCourt.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newCourt[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Courtyard & Stage",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Front Garden
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newFG[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Front Garden","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newFG.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newFG[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Front Garden",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+   // insert Hallways & Stairs
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newHall[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Hallways & Stairs","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newHall.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newHall[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Hallways & Stairs",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Laundry
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newLaun[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Laundry Area","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newLaun.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newLaun[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Laundry Area",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Office
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newOff[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Office","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+
+   // insert Window 1
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newWin1[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Window 1","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newWin1.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newWin1[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Window 1",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+
+   // insert Window 2
+   mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newWin2[0]}'`, function (err, result) {
+      if (err) throw err;
+       //console.log(result);
+      var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+      var values =[id,LastName,BatchName,"Window 2","Coordinator"];
+      mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+   })
+   for(var i = 1;i<newWin2.length;){
+      var type = "Member";
+      mysql.query(`SELECT * FROM tblStudents where StudentLastname = '${newWin2[i++]}'`, function (err, result) {
+        if (err) throw err;
+         //console.log(result);
+        var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
+        var values =[id,LastName,BatchName,"Window 2",type];
+        console.log(values);
+        mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
+     })
+   }
+})
+
+
+
 
 // moving to front
 //var first = "role";

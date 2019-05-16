@@ -45,5 +45,16 @@ module.exports = function(app){
         })
        
     })
+
+    app.get('/shuffledTask',function(req,res){
+        mysql.connect(function(err){
+            mysql.query(`SELECT * FROM tblShuffledTask`, function (err, result) {
+                if (err) throw err;
+                console.log(result);
+                res.render('../views/resultShuffled.ejs',{data:result});
+            });
+        })
+       
+    })
 }
 

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Shuffled Task</title>
+      <link rel="icon" type="image/png" href="/assets/images/pn-logo.png">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="/controller/saveAnddownload.js"></script>
+      <link rel="stylesheet" href="/assets/styles/normalShuffling.css">
+   </head>
+   <body>
+      <div class="menu"> <span></span> </div>
+      <nav id="nav">
+         <ul class="main">
+            <img src="/assets/images/logo.png" alt="PN Logo" width="80%" height="40%" id="logo" style="margin-top: -60%;"><br>
+            <li><a href="currentTasking">Current Tasking</a></li>
+            <li class="has-subnav">
+               <a class="nav-text">Shuffle Tasking</a>
+               <ul>
+                  <li><a href="normalShuffling" class="sub">Normal Shuffling</a></li>
+                  <li><a href="withConsequence" class="sub">With Consequence</a></li>
+               </ul>
+            </li>
+            <!-- <li><a href="violations.html">Violations</a></li> -->
+            <li><a href="centerTask">Center Tasks</a></li>
+            <li class="has-subnav">
+               <a class="nav-text">View Records</a>
+               <ul>
+                  <li><a href="taskRecord" class="sub">Task Record</a></li>
+                  <li><a href="coordinator" class="sub">Coordinator</a></li>
+               </ul>
+            </li>
+            <li><a href="login">Logout</a></li>
+         </ul>
+      </nav>
+      <div class="overlay"></div>
+      <script>
+         $('.menu, .overlay').click(function () {
+           $('.menu').toggleClass('clicked');
+           $('#nav').toggleClass('show');
+         });
+         
+         $(document).ready(function(){
+             $("#download").hide();
+             $("#shuffle").click(function(){
+                 $("#download").show();
+             });
+             $("#download").click(function(){
+                 location.reload();
+             });
+         });
+      </script>
+      <div class="container table-responsive" style="margin-top: 5%; margin-bottom: 5%;">
+         <table class="table table-sm table-bordered table-striped">
+            <center>
+                  <% var today = new Date() %>
+                  <% var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);%>
+                  <% let week = [] %>
+                  <%for (let i = 1; i <= 7; i++) {%>
+                     <% let first = nextweek.getDate() - nextweek.getDay() + i %>
+                     <% let day = new Date(nextweek.setDate(first)).toISOString().slice(0, 10)%>
+                     <% week.push(day)%>
+                  <%}%>
+                  <% var fDay = week[0].split('-') %>
+                  <% var lDay = week[week.length-1].split('-')%>
+                  <% var nextMonday = Number(fDay[2]) + 1, nextSunday = Number(lDay[2]) +1 %>
+                  <% var months = ['January','February','March','April','May','June','July','August','September','October','November','December']%>
+                  <h5>Shuffled Tasking For</h5>
+                  <h6><%= months[today.getMonth()] + " " + nextMonday +" - " + nextSunday +"  "+today.getFullYear() %></h6>
+            </center>
+            <br><br>
+             <!-- <button id="shuffle" class="btn btn-info btn-md" style="margin-bottom: 2%; width: 15%;" data-toggle="modal" data-target="#myModal">Shuffle Students</button> -->
+            <button id="savedownload" class="btn btn-warning btn-md" style="margin-bottom: 2%; width: 13%; float: right;">Save & Download</button>
+            <thead class="head">
+                <tr>
+                   <th style="width: 34%;">Kitchen Team</th>
+                   <th style="width: 33%;">Dishwashers</th>
+                   <th style="width: 33%;">Front Garden</th>
+                </tr>
+             </thead>
+             <% var task = data , kitch = [] , Dish = [],Din = [] , Hall = [] , FG = [], counter = 0 %>
+             <% var  BG = [] , Comp = [], Laun = [] , Off = [] , Court = [], Win1 = [] , Win2 = [] %>
+             <% var win1Counter = 0, win2Counter = 0 ,dinCounter = 6, compCounter = 0;%>
+                <% task.forEach(function(item){%>
+                   <% if(item.TaskName === "Kitchen"){%>
+                      <% kitch.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Dishwashing"){%>
+                      <% Dish.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Dining"){%>
+                      <% Din.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Hallways & Stairs"){%>
+                      <% Hall.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Front Garden"){%>
+                      <% FG.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Back Garden"){%>
+                      <% BG.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Comlab"){%>
+                      <% Comp.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Laundry Area"){%>
+                      <% Laun.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Office"){%>
+                      <% Off.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Courtyard & Stage"){%>
+                      <% Court.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Window 1"){%>
+                      <% Win1.push(item.LastName) %>
+                   <%}%>
+                   <% if(item.TaskName === "Window 2"){%>
+                      <% Win2.push(item.LastName) %>
+                   <%}%>
+             <%})%>
+             <tbody>            
+                <% for(let i = 0 ;i < 10 ;i++){%>
+                   <tr>
+                      <td><%= kitch[i] %></td>
+                      <td><%= Dish[i] %></td>
+                      <% if(i < 4){%>
+                         <td><%= FG[i] %></td>
+                      <%}else if( i== 4){%>
+                         <th class="head">Windows 1</th>
+                      <%}else if( i > 4 && i < 7){%>
+                         <td><%= Win1[win1Counter++] %></td>
+                      <%}else if(i === 7){%>
+                         <th class="head">Windows 2</th>
+                      <%}else{%>
+                         <td><%= Win2[win2Counter++] %></td>
+                      <%}%>
+                   </tr>
+                <%}%>
+                <tr>
+                   <th class="head">Courtyard & Stage</th>
+                   <th class="head">Hallways & Stairs</th>
+                   <th class="head">Back Garden</th>
+                </tr>
+                <% for(let i = 0 ;i < 6 ;i++){%>
+                  <tr>
+                     <td><%= Court[i] %></td>
+                     <td><%= Hall[i] %></td>
+                     <% if(i < 4 ){%>
+                      <td><%= BG[i] %></td>
+                     <%}else if(i == 4){%>
+                      <th class="head">Office</th>
+                     <%}else{%>
+                       <td><%= Off[0] %></td>
+                     <%}%>
+                  </tr>
+                <%}%>
+                <tr>
+                   <th class="head">Dining</th>
+                   <th class="head"></th>
+                   <th class="head">Laundry Area</th>
+                </tr>
+                <% for(let i = 0 ;i < 6 ;i++){%>
+                  <tr>
+                     <td><%= Din[i] %></td>
+                     <td><%= Din[dinCounter++] %></td>
+                     <% if(i < 2){%>
+                      <td><%= Laun[i] %></td>
+                     <%}else if(i == 2){%>
+                      <th class="head">Comlab</th>
+                     <%}else if(i > 2){%>
+                      <td><%= Comp[compCounter++] %></td>
+                     <%}%>
+                  </tr>
+                <%}%>
+             </tbody>
+         </table>
+      </div>
+   </body>
+   <script type="text/javascript">
+    if (location.href.indexOf('reload')==-1)
+    {
+       location.href=location.href+'?reload';
+    }
+    </script>
+</html>

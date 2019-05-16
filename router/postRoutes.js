@@ -15,8 +15,11 @@ module.exports = function(app){
     })
     app.post('/shuffle',function(req,res){
      require('../public/scripts/shuffler');
-    
        res.send('success');
+    })
+    app.post('/saveAndDownload',function(req,res){
+        require('../public/scripts/saverAndDownloader');
+        res.send('success');
     })
 }
 
