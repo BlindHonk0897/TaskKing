@@ -10,10 +10,11 @@
       <link rel="stylesheet" href="/assets/styles/normalShuffling.css">
    </head>
    <body>
+      <div class="preloader"><img src="/assets/images/ger.svg"></div>
       <div class="menu"> <span></span> </div>
       <nav id="nav">
          <ul class="main">
-            <img src="/assets/images/logo.png" alt="PN Logo" width="80%" height="40%" id="logo" style="margin-top: -60%;"><br>
+            <img src="/assets/images/taskinglogo.png" alt="PN Logo" width="80%" height="40%" id="logo" style="margin-top: -60%;"><br>
             <li><a href="currentTasking">Current Tasking</a></li>
             <li class="has-subnav">
                <a class="nav-text">Shuffle Tasking</a>
@@ -42,13 +43,11 @@
          });
          
          $(document).ready(function(){
-              $("#download").hide();
-            //  $("#shuffle").click(function(){
-            //      $("#download").show();
-            //  });
-             $("#download").click(function(){
-                 location.reload();
-             });
+            // $(window).load(function(){
+            //    $(".preloader").fadeOut('slow');
+            // });
+             
+            
          });
       </script>
       <div class="container table-responsive" style="margin-top: 5%; margin-bottom: 5%;">
@@ -203,27 +202,5 @@
             </tbody>
          </table>
       </div>
-      <!-- <div class="container">
-       Modal
-       <div id="myModal" class="modal hide fade" role="dialog">
-            <div class="modal-dialog">
-               Modal content
-               <div class="modal-content">
-                  <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Modal Header</h4>
-                  </div>
-                  <div class="modal-body">
-                  <p>Some text in the modal.</p>
-                  </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
-            <!-- Trigger the modal with a button -->
-      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
    </body>
 </html>
