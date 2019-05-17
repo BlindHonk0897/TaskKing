@@ -7,7 +7,7 @@ $(document).ready(function(){
             data:{},
             success:function(dat){
                console.log(dat);
-               top.location.href = "/currentTasking";
+               top.location.href = "/normalshuffling";
              }
            })
     })
