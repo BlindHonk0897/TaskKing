@@ -10,6 +10,8 @@ $(document).ready(function(){
           //$('#myModal').modal();
       }else{
         $(".preloader").show();
+        $("#teybol").hide();
+        $shuffle.hide();
         $(".preloader").delay(2000);
         $(".preloader").fadeOut(function(){
             //$("#teybol").show();
@@ -28,20 +30,6 @@ $(document).ready(function(){
         
       }
     });
-    // $(".preloader").hide();
-    //         $("#download").hide();
-    //          //$("#teybol").hide();
-    //          $("#shuffle").click(function(){
-    //              $(".preloader").show();
-    //              $(".preloader").delay(2000);
-    //              $(".preloader").fadeOut(function(){
-    //                  //$("#teybol").show();
-    //                  //$("#download").show();
-    //                  //$("#shuffle").disable();
-    //              });
-                 
-    //            //   $("#download").show();
-    //          });
     $("#download").click(function(){
       window.print();
     });       
