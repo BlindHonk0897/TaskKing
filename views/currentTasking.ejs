@@ -142,6 +142,32 @@
                     <%}%>
                  </tr>
                <%}%>
+                  <tr>
+                     <th class="head">Dining</th>
+                     <th class="head"></th>
+                     <th class="head">Laundry Area</th>
+                  </tr>
+                  <% for(let i = 0 ;i < 6 ;i++){%>
+                     <tr>
+                        <td><%= Din[i] %></td>
+                        <% if(i===0){%>
+                           <td> <%= Din[6] %> </td>
+                           <td> <%= Laun[0] %> </td>
+                        <%}%>
+                        <% if(i===1){%>
+                           <td> <%= Din[7] %> </td>
+                           <td> <%= Laun[1] %> </td>
+                        <%}%>
+                        <% if(i===2){%>
+                           <td></td>
+                           <th class="head">Complab</th>
+                        <%}%>
+                        <% if(i>2){%>
+                           <td></td>
+                           <td><%= Comp[compCounter++] %></td>
+                        <%}%>
+                     </tr>
+                   <%}%>
             </tbody>
          </table>
       </div>
