@@ -50,10 +50,10 @@ for(var i = 0;i<10;i++){
    }
    }
 }
-console.log("Kitchen")
-console.log(newKitch);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Kitchen")
+// console.log(newKitch);
+// console.log(studA.length);
+// console.log(studB.length);
 // dining 10
 for(var i = 0;i<8;i++){
    if(i%2==0){
@@ -82,10 +82,10 @@ for(var i = 0;i<8;i++){
     }
    }
 }
-console.log("Dining")
-console.log(newdin);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Dining")
+// console.log(newdin);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // Dishwasher
 for(var i = 0;i<10;i++){
@@ -115,10 +115,10 @@ for(var i = 0;i<10;i++){
     }
    }
 }
-console.log("Dishwasher")
-console.log(newdish);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Dishwasher")
+// console.log(newdish);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // Back Garden 4
 for(var i = 0;i<4;i++){
@@ -136,10 +136,10 @@ for(var i = 0;i<4;i++){
         });
    }
 }
-console.log("Back Garden")
-console.log(newBG);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Back Garden")
+// console.log(newBG);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // complab
 for(var i = 0;i<3;i++){
@@ -157,10 +157,10 @@ for(var i = 0;i<3;i++){
         });
    }
 }
-console.log("Complab")
-console.log(newcomp);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Complab")
+// console.log(newcomp);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // office
 var ln = getRandomFromA();
@@ -168,10 +168,10 @@ newOff.push(ln);
 var studA = studA.filter(function(item) {
    return item.StudentLastname !== ln; 
 });
-console.log("Office")
-console.log(newOff);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Office")
+// console.log(newOff);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // courtyard
 for(var i = 0;i<6;i++){
@@ -189,10 +189,10 @@ for(var i = 0;i<6;i++){
         });
    }
 }
-console.log("Courtyard")
-console.log(newCourt);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Courtyard")
+// console.log(newCourt);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // front Garden
 for(var i = 0;i<4;i++){
@@ -210,10 +210,10 @@ for(var i = 0;i<4;i++){
         });
    }
 }
-console.log("Front Garden")
-console.log(newFG);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Front Garden")
+// console.log(newFG);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // Hallway
 for(var i = 0;i<6;i++){
@@ -231,10 +231,10 @@ for(var i = 0;i<6;i++){
         });
    }
 }
-console.log("HAllway")
-console.log(newHall);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("HAllway")
+// console.log(newHall);
+// console.log(studA.length);
+// console.log(studB.length);
 
 //Laundry
 for(var i = 0;i<2;i++){
@@ -252,10 +252,10 @@ for(var i = 0;i<2;i++){
         });
    }
 }
-console.log("Laundry")
-console.log(newLaun);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Laundry")
+// console.log(newLaun);
+// console.log(studA.length);
+// console.log(studB.length);
 // Window 1
 for(var i = 0;i<2;i++){
    if(i%2==0){
@@ -272,10 +272,10 @@ for(var i = 0;i<2;i++){
         });
    }
 }
-console.log("Window 1")
-console.log(newWin1);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Window 1")
+// console.log(newWin1);
+// console.log(studA.length);
+// console.log(studB.length);
 
 // Window 2
 for(var i = 0;i<2;i++){
@@ -293,70 +293,70 @@ for(var i = 0;i<2;i++){
         });
    }
 }
-console.log("Window 2")
-console.log(newWin2);
-console.log(studA.length);
-console.log(studB.length);
+// console.log("Window 2")
+// console.log(newWin2);
+// console.log(studA.length);
+// console.log(studB.length);
 
 var Coordinator = getRandomCoordinator(newKitch);
 newKitch.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("Kitchen with Coordinator")
-console.log(newKitch);
+// console.log("Kitchen with Coordinator")
+// console.log(newKitch);
 
 Coordinator = getRandomCoordinator(newdin);
 newdin.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newDining with Coordinator")
-console.log(newdin);
+// console.log("newDining with Coordinator")
+// console.log(newdin);
 
 Coordinator = getRandomCoordinator(newdish);
 newdish.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newDish with Coordinator")
-console.log(newdish);
+// console.log("newDish with Coordinator")
+// console.log(newdish);
 
 Coordinator = getRandomCoordinator(newBG);
 newBG.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newBG with Coordinator")
-console.log(newBG);
+// console.log("newBG with Coordinator")
+// console.log(newBG);
 
 Coordinator = getRandomCoordinator(newCourt);
 newCourt.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newCourt with Coordinator")
-console.log(newCourt);
+// console.log("newCourt with Coordinator")
+// console.log(newCourt);
 
 Coordinator = getRandomCoordinator(newFG);
 newFG.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newFG with Coordinator")
-console.log(newFG);
+// console.log("newFG with Coordinator")
+// console.log(newFG);
 
 Coordinator = getRandomCoordinator(newHall);
 newHall.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("NewHall with Coordinator")
-console.log(newHall);
+// console.log("NewHall with Coordinator")
+// console.log(newHall);
 
 Coordinator = getRandomCoordinator(newLaun);
 newLaun.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newLAun with Coordinator")
-console.log(newLaun);
+// console.log("newLAun with Coordinator")
+// console.log(newLaun);
 
 Coordinator = getRandomCoordinator(newOff);
 newOff.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newOff with Coordinator")
-console.log(newOff);
+// console.log("newOff with Coordinator")
+// console.log(newOff);
 
 Coordinator = getRandomCoordinator(newWin1);
 newWin1.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newWin1 with Coordinator")
-console.log(newWin1);
+// console.log("newWin1 with Coordinator")
+// console.log(newWin1);
 
 Coordinator = getRandomCoordinator(newWin2);
 newWin2.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newWin2 with Coordinator")
-console.log(newWin2);
+// console.log("newWin2 with Coordinator")
+// console.log(newWin2);
 
 Coordinator = getRandomCoordinator(newcomp);
 newcomp.sort(function(x,y){ return x == Coordinator ? -1 : y == Coordinator ? 1 : 0; });
-console.log("newComp with Coordinator")
-console.log(newcomp);
+// console.log("newComp with Coordinator")
+// console.log(newcomp);
 
 mysql.connect(function(err){
    // Delete first data to database
@@ -378,7 +378,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Kitchen",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -398,7 +397,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Dining",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -418,7 +416,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Dishwashing",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -438,7 +435,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Back Garden",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -458,7 +454,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Comlab",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -478,7 +473,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Courtyard & Stage",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -498,7 +492,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Front Garden",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -517,7 +510,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Hallways & Stairs",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -537,7 +529,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Laundry Area",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -566,7 +557,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Window 1",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }
@@ -586,7 +576,6 @@ mysql.connect(function(err){
          //console.log(result);
         var id = result[0].StudentId, LastName = result[0].StudentLastname , BatchName = result[0].BatchName;
         var values =[id,LastName,BatchName,"Window 2",type];
-        console.log(values);
         mysql.query(`Insert into tblShuffledTask (StudentId,Lastname,BatchName,TaskName,Type) VALUES ('${values[0]}','${values[1]}','${values[2]}','${values[3]}','${values[4]}')`);
      })
    }

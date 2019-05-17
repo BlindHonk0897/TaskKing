@@ -667,9 +667,6 @@ mysql.connect(function(err){
    }
 })
 
-
-
-
 // moving to front
 //var first = "role";
 //data.sort(function(x,y){ return x == first ? -1 : y == first ? 1 : 0; });

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.preloader').hide();
   $shuffle = $('#shuffle');
   $studentsKitch = $('#studentsKitch');
   $studentsDish = $('#studentsDish');
@@ -17,20 +18,26 @@ $(document).ready(function(){
           myArray.push($studentsDish.val());
           myArray.push($studentsDin.val());
           if(checkIfArrayIsUnique(myArray)){
-            var coordinators = {
-                Kitchen:$studentsKitch.val(),
-                Dishwasher:$studentsDish.val(),
-                Dining:$studentsDin.val()
-            }
-            $.ajax({
-              method:'POST',
-              url:'/shuffleWithConsequence',
-              data:coordinators,
-              success:function(dat){
-                console.log(dat);
-                //top.location.href = "/shuffledTask";
+            $(".preloader").show();
+            $("#teybol").hide();
+            $shuffle.hide();
+            $(".preloader").delay(2000);
+            $(".preloader").fadeOut(function(){
+              var coordinators = {
+                  Kitchen:$studentsKitch.val(),
+                  Dishwasher:$studentsDish.val(),
+                  Dining:$studentsDin.val()
               }
-            })
+              $.ajax({
+                method:'POST',
+                url:'/shuffleWithConsequence',
+                data:coordinators,
+                success:function(dat){
+                  console.log(dat);
+                  top.location.href = "/shuffledTask";
+                }
+              })
+          });
             
           }else{
             alert("Please don't choose the same student!");

@@ -10,6 +10,7 @@
       <script src="/controller/shuffleWithConsequence.js"></script>
    </head>
    <body>
+      <div class="preloader"><img src="/assets/images/ger.svg"></div>
       <div class="menu"> <span></span> </div>
       <nav id="nav">
          <ul class="main">
@@ -52,7 +53,7 @@
          // });
       </script>
       <div class="container table-responsive" style="margin-top: 5%; margin-bottom: 5%;">
-         <table class="table table-sm table-bordered table-striped">
+         <table id="teybol" class="table table-sm table-bordered table-striped">
             <center>
                   <% var today = new Date() %>
                   <% var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);%>

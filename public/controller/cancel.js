@@ -7,7 +7,6 @@ $(document).ready(function(){
             data:{},
             success:function(dat){
                console.log(dat);
-               alert(dat);
                top.location.href = "/currentTasking";
              }
            })
