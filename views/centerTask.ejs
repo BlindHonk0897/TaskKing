@@ -9,11 +9,13 @@
       <link rel="stylesheet" href="/assets/styles/centerTask.css">
    </head>
    <body>
+      <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet"> -->
       <div class="menu"> <span></span> </div>
       <nav id="nav">
-         <ul class="main">
-            <img src="/assets/images/taskinglogo.png" alt="PN Logo" width="80%" height="40%" id="logo" style="margin-top: -60%;"><br>
-            <li><a href="currentTasking">Current Tasking</a></li>
+      <ul class="main">
+        <img src="/assets/images/taskinglogo.png" alt="PN Logo" width="80%" height="40%" id="logo" style="margin-top: -60%;"><br>
+      <!-- <p style="font-size: 2em; color: #fff;">Hello!</p> -->
+      <li><a href="currentTasking">Current Tasking</a></li>
             <li class="has-subnav">
                <a class="nav-text">Shuffle Tasking</a>
                <ul>
@@ -31,82 +33,158 @@
                </ul>
             </li>
             <li><a href="login">Logout</a></li>
-         </ul>
+      </ul>
       </nav>
       <div class="overlay"></div>
       <script>
-         $('.menu, .overlay').click(function () {
-           $('.menu').toggleClass('clicked');
-           $('#nav').toggleClass('show');
-         });
+      $('.menu, .overlay').click(function () {
+      $('.menu').toggleClass('clicked');
+      $('#nav').toggleClass('show');
+      });
       </script>
+     
       <style>
-         .def {
-         text-align: justify;
-         }
+      .def {
+      text-align: justify;
+      height: 7rem;
+      }
       </style>
-      <div class="container table-responsive" style="margin-top: 5%; margin-bottom: 5%;">
-         <table class="table table table-bordered table-striped">
-            <center>
-               <h3 style="margin-bottom: 3%;">Center Tasks</h3>
-            </center>
-            <thead class="head">
-               <tr>
-                  <th style="width: 30%;">Task</th>
-                  <th style="width: 70%;">Definition</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr>
-                  <td>Kitchen</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Dishwashing</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Dining</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Courtyard & Stage</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Hallways & Stairs</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Front Garden</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Back Garden</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Window 1</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Window 2</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Comlab</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Laundry Area</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-               <tr>
-                  <td>Office</td>
-                  <td class="def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-               </tr>
-            </tbody>
-         </table>
+        <div class="container table-responsive" style="margin-top: 5%; margin-bottom: 5%;">
+        <table class="table table table-bordered table-striped">
+      <center><h3 style="margin-bottom: 3%;">Center Tasks</h3></center>
+      <thead class="head">
+      <tr>
+      <th style="width: 30%;">Task</th>
+      <th style="width: 70%;">Definition</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><center style="margin-top:180px;"><b>Kitchen</b></center></td>
+      <td class="def">
+         <p>Receive and properly arrange the food supplies upon delivery. Reflect on the log book all items received.</p>
+         <p>Prepare all the ingredients needed and cook the meal.</p>
+         <p>Ensure that non-kitchen team are not allowed to get inside the kitchen.</p>
+         <p>Monitor and ensure that food supply is safe and enough for the number of students.</p>
+         <p>Dispose the garbage properly and maintain the cleanliness of the area. </p>
+        <p>Wash dirty kitchen towels, mats and linens.</p>
+        <p>Maintain the safety of the area like turning off the gas tanks and organize the sharp materials properly.</p>
+        <p>Take care of the materials provided in the area and conduct an inventory at the end of each semester.</p>
+        <p>To ensure that there is food for everyone. That is, to have a clear counting and segregation of food. </p>
+        <p>Every general cleaning the kitchen has to be thoroughly cleaned. Also, the night before the deliveries arrive, the refrigerators have to be cleaned and food should be place properly.</p>
+        
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:190px;"><b>Dishwashing</b></center></td>
+      <td class="def">
+         <p>To sterilize: To put the utensils in the pot to boil for 30 minutes and then, arrange it back to its designated area(the bucket for utensils).</p>
+        <p>First washing: To remove the food debris or stain through water.</p>
+        <p>To put soap: To put soap thoroughly on the utensils to clean. Making sure that no stain or food debris is left sticking on the utensils.</p>
+        <p>Second washing: To remove soap from the utensils with water.</p>
+        <p>Third washing: To wash thoroughly the utensils making sure it is no longer soapy.</p>
+        <p>Arranger: To put all washed utensils into a large basin. Then, arrange all the utensils properly to its designated area.</p>
+        <p>Aftercleaner: To clean thoroughly the dishwashing area: to sweep clean the canal, ensuring that there will be no stuck debris; then, to brush the dishwashing area and sink, to remove molds. And, to stock water at the waterdrum.</p>
+        <p>Once a week during general cleaning,the aea where you put the plates, utensils etc., should be cleaned as well. </p>
+        <p>General: To make sure that there is dishwashing soap available, diluted in water as per instruction by educator.</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:140px;"><b>Dining</b></center></td>
+      <td class="def">
+         <p>Set the dining table before eating, arrange all tables and chairs after using and collect all the used kitchen utensils and bring them to the kitchen.</p>
+        <p>Maintain the cleanliness of the area before and after the PN activities except for study hours.</p>
+        <p>Dispose garbage (eg. left overs) properly.</p>
+        <p>Always make sure that tables and other materials are safe from getting wet.</p>
+        <p>Account the things present in the assigned place at the end of each semester.</p>
+        <p>Sweep and mop the floor after each meal and keep the things clean.</p>
+        <p>The tables should be cleaned thoroughly everyday to avoid 'langaw'. That is to wipe the tables with soap and water, then dry them properly. </p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:120px;"><b>Courtyard & Stage</b></center></td>
+      <td class="def">
+         <p>The team is in - charge of the segregation of the garbage.</p>
+        <p>Clean the garbage bins as necessary.</p>
+        <p>Dispose the garbage regularly.</p>
+        <p>Take care of the plants.</p>
+        <p>Maintain the cleanliness of the surroundings.</p>
+        <p>Take care of the cleaning materials provided in the area and account them at the end of each weekly.</p>
+        <p>Water the plants beside the stage and near the entrance gate 4x a week.</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:120px;"><b>Hallways & Stairs</b></center></td>
+      <td class="def">
+         <p>Hallway in front of the rooms 1st & 2nd floor, going to the Educator's Office and stairs: To sweep the floor, then mop with clean soap and water. </p>
+        <p>Glass windows: To wipe clean with the glass wiper with soap and water. Then, wipe it with old newspaper. Make sure that the glass is clean and clear. </p>
+        <p>To unsure that the floor is not sticky, hair and dust free at all times.</p>
+        <p>To wash the mops, wipers and  clean then, dry them properly. Then, to put them on their proper places. </p>
+         <p>When it rains or that students are fetching water, they have to put newspaper on the floor and afterwards, to follow with dry mop. </p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:50px;"><b>Front Garden</b></center></td>
+      <td class="def">
+         <p>Remove and properly dispose the dead leaves in the garden beside and infront of the Social Hall.</p>
+         <p>Water the plants in this area 4 times a week.</p>
+         <p>Clean and organize the area every night</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:40px;"><b>Back Garden</b></center></td>
+      <td class="def">
+         <p>Remove and properly dispose the dead leaves in the garden at the back of the rooms.</p>
+         <p>Water the plants in this area 4 times a week.</p>
+         <p>Maintain the organization and cleanliness of the area.</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:55px;"><b>Windodw 1</b></center></td>
+      <td class="def">
+         <p>Social Hall windows: To wipe clean with the glass wiper with soap and water. Then, wipe it with old newspaper. Make sure that the glass is clean and clear. </p>
+         <p> To unsure that the floor is not sticky, hair and dust free at all times. </p>
+         <p>To wash the wipers and clean then, dry them properly. Then, to put them on their proper places. </p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:55px;"><b>Windodw 2</b></center></td>
+      <td class="def">
+         <p>ComLab windows: To wipe clean with the glass wiper with soap and water. Then, wipe it with old newspaper. Make sure that the glass is clean and clear. </p>
+         <p> To unsure that the floor is not sticky, hair and dust free at all times.</p>
+         <p>To wash the wipers and clean then, dry them properly. Then, to put them on their proper places. </p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:80px;"><b>Comlab</b></center></td>
+      <td class="def">
+         <p>Maintain the organization and cleanliness of the area.</p>
+        <p>Report any damaged or malfunctional item to the any PN staff.</p>
+        <p>Make sure the computer is clean</p>
+        <p>Conduct an inventory at the end of each semester.</p>
+         <p>Clean the CR</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:110px;"><b>Laundry Area</b></center></td>
+      <td class="def">
+         <p>Hallway going to the laundry area and the laundry area itself: To sweep the floor, then mop with clean soap and water. </p>
+        <p>Plastic materials should be disposed in garbage cans.</p>
+        <p>Brush the floor and faucet ever general cleaning.</p>
+        <p>Clean the canal and make sure there are no things stuck.</p>
+        <p>Organize the pails and basins.</p>
+        <p>Cover the water containers to avoid build up of mosquitos</p>
+         <p>Lock the door before curfew time</p>
+      </td>
+      </tr>
+      <tr>
+      <td><center style="margin-top:30px;"><b>Office</b></center></td>
+      <td class="def">
+         <p>To sweep the floor and wipe the tables and cabinets.</p>
+      </td>
+      </tr>
+      </tbody>
+      </table>
       </div>
-   </body>
+      </body>
 </html>

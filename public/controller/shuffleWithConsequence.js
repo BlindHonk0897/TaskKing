@@ -8,7 +8,7 @@ $(document).ready(function(){
   $shuffle.click(function(){
       // alert($studentsKitch.val());
       $today = new Date();
-    if($today.getDay() == 6 || $today.getDay() == 0){
+    if($today.getDay() != 6 && $today.getDay() != 0){
         alert("It is not yet time to shuffle Tasking!");
         //$('#myModal').modal();
     }else{
